@@ -75,12 +75,12 @@ inquirer.prompt([
 ]).then(response => {
     let { username, email, name, projectName, description, license, depCommand, testCommand, usage, confirmOS, contribCovenant, openSourceMessage, confirmContribMessage, contribMessage } = response;
 
-    const contribCovenantMessage = contribCovenant ? `This is an open source application and welcome for contribution. If you would like to contribute, you can fork my repo and submit any pull request for any features you would like added.    
+    const contributorCovenantMessage  = contribCovenant ? `This is an open source application and welcome for contribution. If you would like to contribute, you can fork my repo and submit any pull request for any features you would like added.    
     Contributions are protected by the contributor covenant V2.0. If you have any new features you would like to see added or want to report abuse please contact me at ${email} 
-    Click [here](https://www.contributor-covenant.org/version/2/0/code_of_conduct/code_of_conduct.md) for more information regarding contributor covenant V2.0.`;
+    Click [here](https://www.contributor-covenant.org/version/2/0/code_of_conduct/code_of_conduct.md) for more information regarding contributor covenant V2.0.`: "";
 
-    if (!confirmOS) {
-        confirmOS = " "
+    if (!openSourceMessage) {
+        openSourceMessage = " "
     }
     if (!openSourceMessage) {
         openSourceMessage = " "
@@ -161,6 +161,7 @@ inquirer.prompt([
     ## Contributing
     
     ${openSourceMessage}
+    ${contributorCovenantMessage}
     ${contribMessage}
     
 
@@ -188,23 +189,6 @@ inquirer.prompt([
     * []()
     * []()
     * []()`
+    
+    fs.writeFile("README.md", readme, err => err ? console.log(err) : console.log("Success"));
 })
-
-// array of questions for user
-const questions = [
-    {
-        question: ""
-    }
-];
-
-// function to write README file
-function writeToFile(fileName, data) {
-}
-
-// function to initialize program
-function init() {
-
-}
-
-// function call to initialize program
-init();
