@@ -4,7 +4,7 @@ const fs = require("fs");
 inquirer.prompt([
     {
         type: "input",
-        message: "What is your username?",
+        message: "What is your GitHub username?",
         name: "username"
     },
     {
@@ -25,11 +25,13 @@ inquirer.prompt([
     {
         type: "input",
         message: "Please describe your project.",
-        name: "description"
+        name: "description",
+        validate: input => input.length > 2,
     },
     {
         type: "list",
         message: "Please select a license for your project",
+        choices: ["Apache 2.0", "GNU v3.0", "MIT", "BSD 3-clause", "Creative Commons Zero", "Other"],
         name: "license"
     },
     {
@@ -45,7 +47,8 @@ inquirer.prompt([
     {
         type: "input",
         message: "What does the user need to know regarding the usage of this project?",
-        name: "usage"
+        name: "usage",
+        validate: input => input.length > 2,
     },
     {
         type: "confirm",
@@ -55,22 +58,28 @@ inquirer.prompt([
     {
         type: "confirm",
         message: "Would you like to use the contributor covenant for contributor rules?",
-        name: "contribCovenant"
+        name: "contribCovenant",
+        when: answers => answers.confirmOS === true,
     },
     {
         type: "input",
         message: "What does the user need to know about contributing to the project?",
-        name: "openSourceMessage"
+        name: "openSourceMessage",
+        when: answers => answers.contribCovenant === false,
+        validate: input => input.length > 2,
     },
     {
         type: "confirm",
         message: "Would you like to add a message to authorized authors on how to contribute?",
-        name: "confirmContribMessage"
+        name: "confirmContribMessage",
+        when: answers => answers.confirmOS === false,
     },
     {
         type: "input",
         message: "What does the authorized user need to know about contributing to the project?",
-        name: "contribMessage"
+        name: "contribMessage",
+        when: answers => answers.confirmContribMessage === true,
+        validate: input => input.length > 2,
     }
 ]).then(response => {
     let { username, email, name, projectName, description, license, depCommand, testCommand, usage, confirmOS, contribCovenant, openSourceMessage, confirmContribMessage, contribMessage } = response;
