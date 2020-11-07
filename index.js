@@ -115,10 +115,7 @@ inquirer.prompt([
         <a href="https://github.com/${username}/${projectName}/issues">Request Feature</a>
       </p>
     </p>
-    
-    
-    
-    <!-- TABLE OF CONTENTS -->
+
     ## Table of Contents
     
     * [About the Project](#about-the-project)
@@ -145,9 +142,7 @@ inquirer.prompt([
     * []()
     * []()
     
-    
-    
-    <!-- GETTING STARTED -->
+
     ## Getting Started
     
     To get a local copy up and running follow these simple steps.
@@ -197,7 +192,7 @@ inquirer.prompt([
     
     * []()
     * []()
-    * []()`
+    * []()`;
     
     fs.writeFile("README.md", readme, err => err ? console.log(err) : console.log("Success"));
 })
