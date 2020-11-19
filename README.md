@@ -6,7 +6,7 @@
 <h3 align="center">README Generator</h3>
 
 <p align="center">
-it does things. lots of things. great things.
+README Generator is an easy tool for developers who want to save time but still have a professional README for their project.
 <br />
 <a href="https://github.com/baileymyers/README Generator"><strong>Explore the docs »</strong></a>
 <br />
@@ -32,16 +32,16 @@ it does things. lots of things. great things.
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+<p align="center">
+    <img src="assets/demo.gif" alt="gif of README Generator" width="auto" height="auto" />
+</p>
 
-<p>it does things. lots of things. great things.</p>
+<p>README Generator is an easy tool for developers who want to save time but still have a professional README for their project.</p>
 
 ### Built With
 
-* []()
-* []()
-* []()
-
+* Node.js
+* Inquirer
 
 ## Getting Started
 
@@ -54,12 +54,12 @@ npm install
 
 ## Usage
 
-use it well.
+README Generator can be used for any project to create a professional README.
 
 
 ## Roadmap
 
-See the [open issues](https://github.com/baileymyers/README Generator/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/baileymyers/README-Generator/issues) for a list of proposed features (and known issues).
 
 
 ## Contributing
@@ -80,13 +80,11 @@ Distributed under the MIT. See LICENSE for more information.
 
 Bailey Myers - baileymyers96@gmail.com
 
-Project Link: [https://github.com/baileymyers/README Generator](https://github.com/baileymyers/README Generator)
+Project Link: [https://github.com/baileymyers/README-Generator](https://github.com/baileymyers/README-Generator)
 
 
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
-* []()
-* []()
-* []()
+* Thank you to the team (John, Ben, and Dan) for all of the knowledge they share and their support during this course.
