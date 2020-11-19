@@ -61,7 +61,7 @@ inquirer.prompt([
         message: "What does the user need to know about contributing to the project?",
         name: "openSourceMessage",
         when: answers => answers.contribCovenant === false,
-        validate: input => input.length > 2,
+        validate: input => input.length > 5,
     },
     {
         type: "confirm",
@@ -74,7 +74,7 @@ inquirer.prompt([
         message: "What does the authorized user need to know about contributing to the project?",
         name: "contribMessage",
         when: answers => answers.confirmContribMessage === true,
-        validate: input => input.length > 2,
+        validate: input => input.length > 5,
     }
 ]).then(response => {
     let { username, email, name, projectName, description, license, depCommand, usage, confirmOS, contribCovenant, openSourceMessage, confirmContribMessage, contribMessage } = response;
